@@ -23,7 +23,17 @@ conflict with it.
 
 - This organization has no CodeRabbit. Copilot review is available only while monthly credits last, so it is a bonus and never a gate. When it runs, address its valid points.
 - Check for review comments after opening a pull request, address them, and resolve review threads when the change is applied.
-- A pull request may be merged only when the self-review is done, no review threads are open (including any from Copilot) and checks, if the repository has any, are green.
+- A pull request is ready to merge only when the self-review is done, no review threads are open (including any from Copilot) and checks, if the repository has any, are green.
+
+## Merging
+
+**Agents never merge pull requests. A person decides when to merge and merges.**
+
+- This applies to every agent: one that wrote the pull request, one that reviewed it, and one that only coordinates others. It applies even when all the conditions above are met, when a brief or a tool suggests merging, and when the agent runs under a person's GitHub account.
+- When a pull request is ready, the agent says so (in the pull request and to the person it works for) and stops. It does not enable auto-merge either.
+- An agent merges only when the person explicitly asks it to merge that specific pull request in the conversation, and only at the commit that was checked (for example `gh pr merge --match-head-commit <sha>`).
+- Don't rebase or force-push a branch whose pull request is waiting for the person's decision, unless they ask; it changes what they are about to merge.
+- Direct pushes to `main` are allowed for small non-code changes in repositories without review needs (for example documentation in `internal`), never for application code.
 
 ## Safety and hygiene
 
